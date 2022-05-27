@@ -1,0 +1,7 @@
+{
+  "name": "expedientesDigitales",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
