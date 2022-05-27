@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true" [scrollX]="false" [scrollY]="false">
+  <div class="banner animate__animated animate__zoomIn">
+    <img src="assets/shapes.svg" class="banner_bg">
+    <div class="logo">
+        <!-- <img src="assets/imgs/logo.png"> -->
+        <!-- <h2>Expedientes Digitales</h2> -->
+    </div>
+  </div>
+
+  <form class="form" name="loginForm" [formGroup]="loginForm" novalidate>
+    <ion-list lines="none">
+      <ion-item lines="none" [ngClass]="[emailInvalid || emailRequired ? 'error': '']">
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div class="label-error">
+        <ion-label *ngIf="emailInvalid" color="danger">* Correo inválido.</ion-label>
+        <ion-label *ngIf="emailRequired" color="danger">* El correo es obligatorio.</ion-label>
+      </div>
+
+      <ion-item lines="none" [ngClass]="[passwordRequired ? 'error': '']">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <div class="label-error">
+        <ion-label *ngIf="passwordRequired" color="danger">* La contraseña es obligatoria.</ion-label>
+      </div>
+      
+      <ion-button shape="block" (click)="login()">Entrar</ion-button>
+    </ion-list>
+  </form>
+</ion-content>
